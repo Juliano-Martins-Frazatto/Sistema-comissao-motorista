@@ -1,0 +1,1 @@
+Sistema de cálculo de comissão de motoristas do setor rodoviário. Projeto criado para ser utilizado em situações reais e para prática de lógica de programação
