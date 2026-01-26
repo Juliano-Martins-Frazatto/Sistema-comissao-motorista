@@ -6,10 +6,31 @@ def cor_verde(mensagem):
     print(f"{verde}{mensagem}{reset}")
 
 
+def continuar_sn():
+    while True:
+
+        continuar = input("Deseja continuar?[s/n]:").lower().strip()
+
+        if continuar == "n":
+            print("Você saiu do programa")
+
+            return False
+
+        elif continuar == "s":
+
+            print("Continuando -------------------->")
+
+            break
+
+        else:
+            print("Digite apenas opções válidas [s/n]")
+
+
 def converter_entrada_de_dados(mensagem):
     while True:
         try:
             return float(input(mensagem))
+
         except ValueError:
             print("Erro: digite apenas números")
 
@@ -49,7 +70,9 @@ def calculo_comissao_bruta(
 
 cor_verde("============================================================\n       \nBem-vindo\n                        \n============================================================")
 
+
 while True:
+
     valor_frete_ida = converter_entrada_de_dados(
         f"\nValor do frete de ida (verificar se o vale pedágio não está incluso, se estiver, subtraia o valor do mesmo!):")
 
@@ -103,3 +126,5 @@ while True:
 
         cor_verde(
             f"\n===========================================================    \nSobrou {conta_vale} de vale. Esse valor será descontado da comissão.\nPagar para o motorista:{conta_vale_suficiente}\n===========================================================            ")
+
+    continuar_sn()
